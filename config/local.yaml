@@ -1,0 +1,13 @@
+env: "local"
+
+postgres:
+  postgres_db: "gRPC-users"
+  postgres_user: "root"
+  postgres_password: "root"
+  postgres_host: "localhost"
+  postgres_port: "5541"
+  sslmode: "disable"
+
+grpc:
+  grpc_host: "localhost"
+  grpc_port: "50051"

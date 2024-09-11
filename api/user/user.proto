@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/101-r/gRPC-service/pkg/user;user";
+
+service UserService {
+    rpc Create(CreateRequest) returns (CreateResponse);
+    rpc Get(GetRequest) returns (GetResponse);
+    rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message UserInfo {
+    int64 id = 1;
+    string username = 2; 
+    string first_name = 3;
+    string last_name = 4;
+    string email = 5;
+    string password = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}
+
+message User {
+    int64 id = 1;
+    UserInfo info = 2;
+}
+
+message CreateRequest {
+    UserInfo info = 1;
+}
+
+message CreateResponse {
+    int64 id = 1;
+}
+
+message GetRequest {
+    int64 id = 1;
+}
+
+message GetResponse {
+    User user = 1;
+}
+
+message DeleteRequest {
+    int64 id = 1;
+}
+
+message DeleteResponse {
+    int64 id = 1;
+}
