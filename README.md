@@ -22,7 +22,7 @@ fedora (using dnf)
 dnf install grpcurl
 ```
 
-### Future Improvements
+## Future Improvements
 This repository will be continuously improved and expanded to include additional features, better error handling, enhanced logging, and further examples of best practices.
 
 Contributions and suggestions are welcome to help make this service more robust and adaptable for real-world applications.
