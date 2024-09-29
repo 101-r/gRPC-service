@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  gRPC-users:
+    image: postgres
+    container_name: gRPC-users
+    environment:
+      POSTGRES_DB: gRPC-users
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./sql/gRPC-users.sql:/docker-entrypoint-initdb.d/gRPC-users.sql
+    ports:
+      - "5541:5432"
